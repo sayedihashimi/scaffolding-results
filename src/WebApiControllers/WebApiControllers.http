@@ -1,6 +1,16 @@
 @WebApiControllers_HostAddress = http://localhost:5085
 
-GET {{WebApiControllers_HostAddress}}/weatherforecast/
+GET {{WebApiControllers_HostAddress}}/api/contacts/
 Accept: application/json
+
+###
+POST {{WebApiControllers_HostAddress}}/api/contacts/
+Content-Type: application/json
+
+{
+  "Name": "Sayed",
+  "Email": "sayed@example.com",
+  "Phone": "123-456-7890"
+}
 
 ###
