@@ -1,7 +1,12 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using MVCWeb01.Data;
 namespace MVCWeb01 {
     public class Program {
         public static void Main(string[] args) {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddDbContext<MVCWeb01Context>(options =>
+                options.UseSqlite(builder.Configuration.GetConnectionString("MVCWeb01Context") ?? throw new InvalidOperationException("Connection string 'MVCWeb01Context' not found.")));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
