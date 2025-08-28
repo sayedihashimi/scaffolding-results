@@ -4,3 +4,17 @@ GET {{WebApiEndpoints01_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+GET {{WebApiEndpoints01_HostAddress}}/api/contact
+
+###
+
+POST {{WebApiEndpoints01_HostAddress}}/api/contact
+content-type: application/json
+
+{
+  "Name": "Sayed",
+  "email": "sayed@example.com",
+  "phone": "1112223333"
+}
+
+###
